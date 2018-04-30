@@ -1,0 +1,27 @@
+follow this guide to install arudino for teensy (need to check if you have the supported version of arudino):
+https://www.pjrc.com/teensy/td_download.html
+
+Teensy pinout: https://www.pjrc.com/teensy/pinout.html
+
+
+
+need to install libraries:
+FlexCan Library for teensy: https://github.com/teachop/FlexCAN_Library
+Teensy Low Power Library (snooze library): https://github.com/duff2013/Snooze
+
+
+
+Current working version File: 
+TeensyLowPowerRTC: need to implement CANBUS transmit
+
+Discription of each folder:
+ArudinoRecieveTest: code uploaded to an arduino to test incoming serial messages
+Teensy_hibernate_digitalpin_wakeup: test hibernate/wakeup on the teensy
+TeensyTransmitTest: Test serial transmit
+TimeTeensy3: Test internal RTC of teensy
+TeensyLowPowerRTC: Combination of above code to have a working low power RTC. Hibernate/wakeup, Time keeping, serial transmit
+
+To set the correct UTC time change time_t = current_unix_epoch_time in the setup() section of the arduino code;  
+current_unix_epoch_time can be found from https://www.epochconverter.com/ then upload code to teensy. 
+
+
